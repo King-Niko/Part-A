@@ -9,6 +9,26 @@
 #include <stdexcept>
 using namespace std;
 
+// Custom exception for invalid character
+class InvalidCharacterException : public exception
+{
+public:
+    const char* what() const noexcept override
+    {
+        return "Error: Invalid starting character.";
+    }
+};
+
+// Custom exception for inlaid range (out of bounds)
+class InvalidRangeException : public exception
+{
+public:
+    const char* what() const noexcept override
+    {
+        return "Error: Invalid range for the character.";
+    }
+};
+
 char character(char start, int offset)
 {
 
@@ -17,4 +37,6 @@ char character(char start, int offset)
 int main()
 {
     // Driver ... test ...
+
+    return 0;
 }
