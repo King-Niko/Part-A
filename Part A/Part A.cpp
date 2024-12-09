@@ -54,7 +54,42 @@ char character(char start, int offset)
 
 int main()
 {
-    // Driver ... test ...
+    // Test case 1
+    try
+    {
+        cout << "character('a', 1) = ";
+        cout << character('a', 1) << endl; // should retrun 'b'
+        cout << "character('a', -1) = ";
+        cout << character('a', -1) << endl; // should throw exception
+    }
+    catch (const exception& e)
+    {
+        cout << e.what() << endl << endl;
+    }
+
+    // Test case 2
+    try
+    {
+        cout << "character('Z', -1) = ";
+        cout << character('Z', -1) << endl; // should return 'Y'
+        cout << "character('?', 5) = ";
+        cout << character('?', 5) << endl; // should throw exception
+    }
+    catch (const exception& e)
+    {
+        cout << e.what() << endl << endl;
+    }
+
+    // Test case 3
+    try
+    {
+        cout << "character('A', 32) = ";
+        cout << character('A', 32) << endl; // should throw exception
+    }
+    catch (const exception& e)
+    {
+        cout << e.what() << endl << endl;
+    }
 
     return 0;
 }
